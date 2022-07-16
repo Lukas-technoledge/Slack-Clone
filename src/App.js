@@ -1,10 +1,16 @@
-
 import './App.css';
+import Header from './Header';
+import Sidebar from './Sidebar'
 
 function App() {
   return (
-    <div className="App">
-      <h2>hello slack</h2>
+    <div className="app">
+      {/*header  */}
+      <Header />
+      <div className="app__body">
+        <Sidebar />
+      </div>
+
     </div>
   );
 }
