@@ -1,0 +1,31 @@
+.sidebar {
+    background-color: var(--slack-color);
+    border-top: 1px solid rgb(121,86,121);
+    max-width: 260px;
+    color: white;
+}
+
+.sidebar__header {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(121,86,121);
+}
+
+.sidebar__header > h2 {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__info {
+    flex: 1;
+}
+
+.sidebar > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(121,86,121);
+}
