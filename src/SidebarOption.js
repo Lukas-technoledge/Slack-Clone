@@ -9,7 +9,7 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
 
   const selectChannel = () => {
     if (id) {
-      navigate(`/path/${id}`);
+      navigate(`/room/${id}`);
     } else {
       navigate(title);
     }

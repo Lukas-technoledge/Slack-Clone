@@ -13,7 +13,7 @@ function App() {
 
           <Routes>
             <Route path='/room/:roomId' element={<Chat/>}></Route>
-            <Route path='/' element={'chat'}></Route>
+            <Route path='/' element={<Chat />}></Route>
           </Routes>
         </div>
       </div>

@@ -26,7 +26,7 @@ function Chat() {
             <div className="chat__header">
                 <div className="chat__headerLeft">
                     <h4 className='chat__channelName'>
-                        <strong>#general</strong> <ExpandMoreIcon />
+                        <strong>#{roomDetails?.name}</strong> <ExpandMoreIcon />
                     </h4>
                 </div>
                 <div className="chat__headerRight">
