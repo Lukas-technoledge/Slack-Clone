@@ -1,17 +1,22 @@
 import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Chat from './Chat';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="app">
-      {/*header  */}
-      <Header />
-      <div className="app__body">
-        <Sidebar />
-      </div>
+      <div className="app">
+        <Header />
+        <div className="app__body">
+          <Sidebar />
 
-    </div>
+          <Routes>
+            <Route path='/room/:roomId' element={<Chat/>}></Route>
+            <Route path='/' element={'chat'}></Route>
+          </Routes>
+        </div>
+      </div>
   );
 }
 
