@@ -10,6 +10,7 @@ function Chat() {
 
     const { roomId } = useParams();
     const [roomDetails, setRoomDetails] = useState(null)
+    const [roomMessages, setRoomMessages] = useState()
 
     useEffect(() => {
         if (roomId) {
@@ -17,16 +18,22 @@ function Chat() {
                 setRoomDetails(snapshot.data())
             ))
         }
+        db.collection('rooms').doc(roomId).collection('messages').orderBy('timestamp', 'asc').onSnapshot(
+            snapshot => setRoomMessages(
+                snapshot.docs.map(doc => doc.data())
+            )
+        )
     }, [roomId]);
 
     console.log(roomDetails);
+    console.log('messayges', roomMessages);
 
     return (
         <div className='chat'>
             <div className="chat__header">
                 <div className="chat__headerLeft">
                     <h4 className='chat__channelName'>
-                        <strong>#{roomDetails?.name}</strong> <ExpandMoreIcon />
+                        <strong># {roomDetails?.name} </strong> <ExpandMoreIcon />
                     </h4>
                 </div>
                 <div className="chat__headerRight">
