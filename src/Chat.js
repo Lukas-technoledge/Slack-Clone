@@ -4,13 +4,14 @@ import { useParams } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import db from './firebase';
+import Message from './Message';
 
 
 function Chat() {
 
     const { roomId } = useParams();
     const [roomDetails, setRoomDetails] = useState(null)
-    const [roomMessages, setRoomMessages] = useState()
+    const [roomMessages, setRoomMessages] = useState([])
 
     useEffect(() => {
         if (roomId) {
@@ -39,6 +40,12 @@ function Chat() {
                 <div className="chat__headerRight">
                     <PersonAddIcon />
                 </div>
+            </div>
+            
+            <div className="chat__messages">
+                {roomMessages.map(({ message, timestamp, user, userImage}) => (
+                    <Message message={message} timestamp={timestamp} user={user} userImage={userImage} />
+                ))}
             </div>
         </div>
     )
