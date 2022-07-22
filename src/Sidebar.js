@@ -20,35 +20,37 @@ import { useStateValue } from './StateProvider';
 
 function Sidebar() {
 
-    const [channels, setChannels] = useState([]);
-    const [{user}] = useStateValue();
+  const [channels, setChannels] = useState([]);
+  const [{ user }] = useStateValue();
 
-    useEffect(() => {
-        db.collection('rooms').onSnapshot(snapshot => (
-            setChannels(snapshot.docs.map((doc) => ({
-                id: doc.id,
-                name:doc.data().name,
-            })))
-        ))
-    }, []);
+  useEffect(() => {
+    db.collection('rooms').onSnapshot(snapshot => (
+      setChannels(snapshot.docs.map((doc) => ({
+        id: doc.id,
+        name: doc.data().name,
+      })))
+    ))
+  }, []);
 
   return (
     <div className='sidebar'>
       <div className="sidebar__header">
-        <h2 className='sidebar__info'>ALX-ND-C1 <ExpandMoreSharpIcon /></h2>
-        <h3> <FiberManualRecordIcon /> {user?.displayName}</h3>
+        <div className="sidebar__info">
+          <h2>ALX-ND-C1 <ExpandMoreSharpIcon /></h2>
+          <h3> <FiberManualRecordIcon /> {user?.displayName}</h3>
+        </div>
         <ModeEditIcon />
       </div>
-      <SidebarOption  Icon={InsertCommentIcon} title={'Threads'}/>
-      <SidebarOption Icon={ForwardToInboxIcon} title={'Mentions & Reactions'}/>
-      <SidebarOption Icon={DraftsIcon} title={'Saved items'}/>
-      <SidebarOption Icon={BookmarkBorderIcon} title={'Channel browser'}/>
-      <SidebarOption Icon={PeopleAltIcon} title={'People & user groups'}/>
-      <SidebarOption Icon={AppsIcon} title={'Apps'}/>
-      <SidebarOption Icon={FileCopyIcon} title={'File browser'}/>
-      <SidebarOption Icon={ExpandLessIcon} title={'Showless'}/>
+      <SidebarOption Icon={InsertCommentIcon} title={'Threads'} />
+      <SidebarOption Icon={ForwardToInboxIcon} title={'Mentions & Reactions'} />
+      <SidebarOption Icon={DraftsIcon} title={'Saved items'} />
+      <SidebarOption Icon={BookmarkBorderIcon} title={'Channel browser'} />
+      <SidebarOption Icon={PeopleAltIcon} title={'People & user groups'} />
+      <SidebarOption Icon={AppsIcon} title={'Apps'} />
+      <SidebarOption Icon={FileCopyIcon} title={'File browser'} />
+      <SidebarOption Icon={ExpandLessIcon} title={'Showless'} />
       <hr />
-      <SidebarOption Icon={ExpandMoreIcon} title={'Channels'}/>
+      <SidebarOption Icon={ExpandMoreIcon} title={'Channels'} />
       <hr />
       <SidebarOption Icon={AddIcon} title={'Add channels'} addChannelOption />
       {channels.map(channel => (

@@ -25,7 +25,7 @@ function Login() {
     return (
         <div className='login'>
             <div className="login__container">
-                <img src="https://cdn.mos.cms.futurecdn.net/SDDw7" alt="img" />
+                <img src="https://i.pcmag.com/imagery/reviews/07td46ju7p6ILVb0QGwc5VF-6..v_1569479844.jpg" alt="img" />
                 <h2>Sign in to Slack-clone</h2>
                 <p>Slack.com</p>
                 <Button onClick={signIn}>Sign In with Google</Button>

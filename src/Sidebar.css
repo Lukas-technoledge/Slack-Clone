@@ -9,20 +9,41 @@
 .sidebar__header {
     color: white;
     display: flex;
-    align-items: center;
-    font-size: 12px;
-    justify-content: space-between;
-    padding: 18px 20px;
+    padding: 13px;
     border-bottom: 1px solid rgb(121,86,121);
+    padding-bottom: 13px;
 }
 
-.sidebar__header > h2 {
+.sidebar__header > .MuiSvgIcon-root {
+    padding: 8px;
+    color: #49274b;
+    font-size: 10px;
+    background-color: white;
+    border-radius: 990px;
+}
+
+.sidebar__info {
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.sidebar__info > h3 {
     display: flex;
     align-items: center;
+    font-size: 13px;
+    font-weight: 400px;
 }
 
 .sidebar__info {
     flex: 1;
+}
+
+.sidebar__info > h3 > .MuiSvgIcon-root {
+    font-size: 14px;
+    margin-top: 1px;
+    margin-right: 2px;
+    color: green;
 }
 
 .sidebar > hr {

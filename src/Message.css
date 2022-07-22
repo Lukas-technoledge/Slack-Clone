@@ -13,3 +13,11 @@
 .message__info {
     padding-left: 10px;
 }
+
+.message >img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    border-radius: 990px;
+}
+

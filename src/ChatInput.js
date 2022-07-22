@@ -3,6 +3,7 @@ import './ChatInput.css'
 import {useState} from 'react'
 import { useStateValue } from './StateProvider';
 import db from './firebase';
+import firebase from 'firebase/compat/app';
 
 function ChatInput({channelName, channelId}) {
 
@@ -20,6 +21,7 @@ function ChatInput({channelName, channelId}) {
             userImage: user.photoURL,
           });
         }
+        setInput('');
     };
 
   return (
