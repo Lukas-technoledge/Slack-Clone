@@ -13,11 +13,15 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandLess';
 import AddIcon from '@mui/icons-material/Add';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import db from './firebase';
+import { useStateValue } from './StateProvider';
+
 
 function Sidebar() {
 
     const [channels, setChannels] = useState([]);
+    const [{user}] = useStateValue();
 
     useEffect(() => {
         db.collection('rooms').onSnapshot(snapshot => (
@@ -32,6 +36,7 @@ function Sidebar() {
     <div className='sidebar'>
       <div className="sidebar__header">
         <h2 className='sidebar__info'>ALX-ND-C1 <ExpandMoreSharpIcon /></h2>
+        <h3> <FiberManualRecordIcon /> {user?.displayName}</h3>
         <ModeEditIcon />
       </div>
       <SidebarOption  Icon={InsertCommentIcon} title={'Threads'}/>

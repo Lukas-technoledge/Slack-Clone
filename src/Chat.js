@@ -5,6 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import db from './firebase';
 import Message from './Message';
+import ChatInput from './ChatInput';
 
 
 function Chat() {
@@ -41,12 +42,14 @@ function Chat() {
                     <PersonAddIcon />
                 </div>
             </div>
-            
+
             <div className="chat__messages">
                 {roomMessages.map(({ message, timestamp, user, userImage}) => (
                     <Message message={message} timestamp={timestamp} user={user} userImage={userImage} />
                 ))}
             </div>
+
+            <ChatInput channelName={roomDetails?.name} channelId={roomId}/>
         </div>
     )
 }

@@ -5,8 +5,12 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import SearchIcon from '@mui/icons-material/Search';
 import { Avatar } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+
+    const [{ user }] = useStateValue();
+
     return (
         <div className='header'>
             <div className="header__left">
@@ -14,7 +18,7 @@ function Header() {
             </div>
 
             <div className="header__search">
-                <input type="text" placeholder='Search ALX-ND-C1' />
+                <input type="text" placeholder='Search ALX-ND-C1 ' />
                 <div className="searchIcons">
                     <FilterListIcon />
                     <SearchIcon className='search' />
@@ -23,7 +27,7 @@ function Header() {
 
             <div className="header__right">
                 <HelpOutlineIcon />
-                <Avatar variant="rounded">CO</Avatar>
+                <Avatar variant="rounded" className='header__avatar' alt={user?.displayName} src={user?.photoURL} />
             </div>
         </div>
     )
