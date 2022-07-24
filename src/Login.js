@@ -4,6 +4,7 @@ import { Button } from '@mui/material';
 import { auth, provider } from './firebase';
 import { useStateValue } from './StateProvider'
 import { actionTypes } from './reducer';
+import img1 from './slack-new-logo.svg';
 
 function Login() {
     const [state, dispatch] = useStateValue();
@@ -25,7 +26,7 @@ function Login() {
     return (
         <div className='login'>
             <div className="login__container">
-                <img src="https://i.pcmag.com/imagery/reviews/07td46ju7p6ILVb0QGwc5VF-6..v_1569479844.jpg" alt="img" />
+                <img src={img1} alt="" />
                 <h2>Sign in to Slack-clone</h2>
                 <p>Slack.com</p>
                 <Button onClick={signIn}>Sign In with Google</Button>
